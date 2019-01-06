@@ -71,6 +71,12 @@ $(function () {
 		return false;
 	});
 
+	$('.page').on('click', function(e){
+		if($('.top-menu').hasClass('active') && !$('.top-menu').is(e.target)){
+			$('.top-menu').removeClass('active');
+		}
+		return false;
+	});
 	/* Fixed Top Menu on scroll */
 	$(window).on('scroll', function(){
 		if ($(this).scrollTop() > 100) {
