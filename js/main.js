@@ -145,6 +145,9 @@ $(function () {
 				url: 'https://docs.google.com/forms/d/e/1FAIpQLSfDH614IOwvVBpiP2817rvl7PYHq9xGL12d1bfgMrB-iY3APQ/formResponse',
 				type: 'post',
 				dataType: 'xml',
+				headers: {
+					'Access-Control-Allow-Origin': "https://www.iakovosds.me"
+				}
 				data: {
 					'entry.1937321077': $("#gform").find('input[name="entry.1937321077"]').val(),
 					'entry.1780941844': $("#gform").find('input[name="entry.1780941844"]').val(),
