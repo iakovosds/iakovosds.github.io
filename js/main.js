@@ -147,16 +147,14 @@ $(function() {
             request.send();
             request.onreadystatechange = function() {
                 if (request.readyState === 4) {
-                    if (request.status === 200 && request.status === 'OK') {
-                        $('#gform').fadeOut(2000);
-                        $('#gform').prepend('<p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p>');
-                    } else {
-                        $('#gform').fadeOut(2000);
-                        $('#gform').prepend('<p align="justify">There was an error. Please refresh the page and try again!</p>');
+                    $('#gform').fadeOut(2000);
+                    $('#gform').prepend('<p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p>');
+                } else {
+                    $('#gform').fadeOut(2000);
+                    $('#gform').prepend('<p align="justify">There was an error. Please refresh the page and try again!</p>');
                     }
                 }
             }
-        }
     });
 
 
