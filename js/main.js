@@ -123,7 +123,7 @@ $(function () {
 	});
 
 	/* Validate contact form */
-	$("#cform").validate({
+	$("#gform").validate({
 		rules: {
 			name: {
 				required: true
@@ -142,10 +142,15 @@ $(function () {
 		success: "valid",
 		submitHandler: function() {
 			$.ajax({
-				url: 'mailer/feedback.php',
+				url: 'https://docs.google.com/forms/d/e/1FAIpQLSfDH614IOwvVBpiP2817rvl7PYHq9xGL12d1bfgMrB-iY3APQ/formResponse',
 				type: 'post',
-				dataType: 'json',
-				data: 'name='+ $("#cform").find('input[name="name"]').val() + '&email='+ $("#cform").find('input[name="email"]').val() + '&subject='+ $("#cform").find('input[name="subject"]').val() + '&message=' + $("#cform").find('textarea[name="message"]').val(),
+				dataType: 'xml',
+				data: {
+					'entry.1937321077': $("#gform").find('input[name="entry.1937321077"]').val(),
+					'entry.1780941844': $("#gform").find('input[name="entry.1780941844"]').val(),
+					'entry.476731930': $("#gform").find('input[name="entry.476731930"]').val(),
+					'entry.1704654541': $("#gform").find('textarea[name="entry.1704654541"]').val()
+				},
 				beforeSend: function() {
 
 				},
@@ -153,8 +158,8 @@ $(function () {
 
 				},
 				success: function(data) {
-					$('#cform').fadeOut();
-					$('.alert-success').delay(1000).fadeIn();
+					$('#gform').fadeOut(2000);
+					$('#gform').prepend('<div><p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p></div>');
 				}
 			});
 		}
