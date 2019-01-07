@@ -146,12 +146,10 @@ $(function() {
             request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
             request.send();
             request.onreadystatechange = function() {
-                if (request.readyState === 4) {
-                    $('#gform').fadeOut(2000);
-                    $('#gform').prepend('<p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p>');
+                if (request.readyState ==4 && request.status == 0) {
+                    $('#gform').prepend('<p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p>').fadeIn('slow');
                 } else {
-                    $('#gform').fadeOut(2000);
-                    $('#gform').prepend('<p align="justify">There was an error. Please refresh the page and try again!</p>');
+                    $('#gform').prepend('<p align="justify">There was an error. Please refresh the page and try again!</p>').fadeIn('slow');
                     }
                 }
             }
