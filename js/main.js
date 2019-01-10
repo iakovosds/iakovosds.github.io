@@ -252,6 +252,10 @@ function loadMapScenario() {
     map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
         center: new Microsoft.Maps.Location(40.639969, 22.951074),
         zoom: 15,
+        enableClickableLogo: false,
+        showMapTypeSelector: false,
+        showTermsLink: false,
+        showScalebar: false,
         customMapStyle: {
             elements: {
                 area: {
