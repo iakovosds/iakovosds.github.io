@@ -147,7 +147,10 @@ $(function() {
             request.send();
             request.onreadystatechange = function() {
                 if (request.readyState ==4 && request.status == 0) {
+                    $('#gform *').fadeOut(2000);
                     $('#prepend_msg').text('Thanks, your message is sent successfully. I will contact you shortly!').fadeIn('slow');
+                    $('#submit_btn').hide(2000);
+                    $('#send_new_btn').show(2000);
                 } else {
                     $('#prepend_msg').text('There was an error. Please refresh the page and try again!').fadeIn('slow');
                     }
@@ -155,6 +158,13 @@ $(function() {
             }
     });
 
+    $('#send_new_btn').on('click', function(e) {
+        $('#prepend_msg').text('').fadeIn('slow');
+        $('#gform')[0].reset();
+        $('#gform *').fadeIn(1500);
+        $('#send_new_btn').hide();
+        $('#submit_btn').show(500);
+    });
 
     /* Validate contact form */
     $("#blog-form").validate({
