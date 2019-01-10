@@ -147,9 +147,9 @@ $(function() {
             request.send();
             request.onreadystatechange = function() {
                 if (request.readyState ==4 && request.status == 0) {
-                    $('#gform').prepend('<p align="justify">Thanks, your message is sent successfully. I will contact you shortly!</p>').fadeIn('slow');
+                    $('#prepend_msg').text('Thanks, your message is sent successfully. I will contact you shortly!').fadeIn('slow');
                 } else {
-                    $('#gform').prepend('<p align="justify">There was an error. Please refresh the page and try again!</p>').fadeIn('slow');
+                    $('#prepend_msg').text('There was an error. Please refresh the page and try again!').fadeIn('slow');
                     }
                 }
             }
