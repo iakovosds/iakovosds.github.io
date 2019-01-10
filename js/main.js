@@ -307,7 +307,6 @@ function loadMapScenario() {
         visible: true,
         location: map.getCenter(),
         description: pin.metadata.description,
-        visible: true,
         maxHeight: 155,
         maxWidth: 280
     });
